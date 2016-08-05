@@ -2,6 +2,8 @@ TODO:
 
 * Build dependencies.
 * Fix theme.
+* Version.
+* Descriptions.
 
 Blockers:
 
