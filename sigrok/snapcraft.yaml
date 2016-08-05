@@ -1,0 +1,51 @@
+name: sigrok
+version: 0
+summary: sigrok
+description: sigrok
+confinement: devmode
+
+apps:
+  sigrok-cli:
+    command: data-dir-wrapper sigrok-cli
+  pulseview:
+    command: desktop-launch data-dir-wrapper pulseview
+
+parts:
+
+  libserialport:
+    source: git://sigrok.org/libserialport
+    plugin: autotools
+
+  libsigrok:
+    source: git://sigrok.org/libsigrok
+    plugin: autotools
+    after: [libserialport]
+
+  libsigrokdecode:
+    source: git://sigrok.org/libsigrokdecode
+    plugin: autotools
+    after: [libsigrok]
+
+  sigrok-firmware:
+    source: git://sigrok.org/sigrok-firmware
+    plugin: autotools
+
+  sigrok-firmware-fx2lafw:
+    source: git://sigrok.org/sigrok-firmware-fx2lafw
+    plugin: autotools
+
+  sigrok-cli:
+    source: git://sigrok.org/sigrok-cli
+    plugin: autotools
+    after: [libsigrokdecode]
+
+  pulseview:
+    source: git://sigrok.org/pulseview
+    plugin: cmake
+    after: [libsigrokdecode, desktop/qt5]
+
+  copy:
+    plugin: copy
+    files:
+      data-dir-wrapper: bin/data-dir-wrapper
+    

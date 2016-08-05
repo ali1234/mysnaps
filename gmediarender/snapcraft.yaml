@@ -1,0 +1,27 @@
+name: gmediarender
+version: 0
+summary: uPNP media renderer
+description: Blah.
+confinement: devmode
+
+apps:
+  gmediarender:
+    command: run-gmediarender
+    plugs:
+      - pulseaudio
+      - network
+      - network-bind
+
+parts:
+  gmediarender:
+    plugin: nil
+    stage-packages:
+      - gmediarender
+      - gstreamer1.0-plugins-base
+      - gstreamer1.0-plugins-good
+      - gstreamer1.0-plugins-bad
+      - gstreamer1.0-plugins-ugly
+  copy:
+    plugin: copy
+    files:
+      run-gmediarender: run-gmediarender

@@ -1,0 +1,9 @@
+TODO:
+
+* Build dependencies.
+* Fix theme.
+
+Blockers:
+
+* Needs a way to access USB devices.
+  - https://bugs.launchpad.net/bugs/1598266
