@@ -1,7 +1,23 @@
 name: sigrok
 version: 0
-summary: sigrok
-description: sigrok
+summary: Logic analyzer and protocol decoder software suite.
+description: |
+  sigrok is a portable logic analyzer software that supports various logic
+  analyzer hardware, input formats, output formats, and protocol decoders.
+  
+  PulseView is a GUI for sigrok that supports logic analyzers, oscilloscopes,
+  and MSOs.
+  
+  It can acquire samples from a supported device and display them,
+  load and display captures from existing sigrok *.sr files, as well
+  as run protocol decoders and display their annotations.
+  
+  sigrok-cli is a command-line data acquisition and protocol decoding software.
+  
+  It supports sample acquisition from logic analyzer, oscilloscope,
+  multimeter, and other hardware, as well as running protocol decoders over
+  the sample data (either from hardware or loaded from files).
+
 confinement: devmode
 
 apps:
