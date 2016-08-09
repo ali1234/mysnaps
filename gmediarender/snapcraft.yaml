@@ -1,7 +1,16 @@
 name: gmediarender
 version: 0
-summary: uPNP media renderer
-description: Blah.
+summary: Small headless uPNP media renderer.
+description: |
+  gmediarender is a UPnP media renderer for POSIX-compliant
+  systems, such as Linux or UNIX. It implements the server
+  component that provides UPnP controllers a means to render media
+  content (audio, video and images) from a UPnP media server.
+  
+  gmrender-resurrect is a fork from GMediaRender which was abandonded upstream.
+  
+  This snap is built from the Ubuntu 16.04 repository packages.
+
 confinement: devmode
 
 apps:
