@@ -7,6 +7,8 @@ ppa:a-j-buxton/qt5-raspi-eglfs
 All Qt build packages must be installed from these PPAs, as well
 as Raspberry Pi development files.
 
+See https://launchpad.net/~a-j-buxton/+archive/ubuntu/qt5-raspi-eglfs
+
 Give it an RSS feed, eg:
 
 qmlrss http://feeds.bbci.co.uk/news/rss.xml
