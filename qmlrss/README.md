@@ -16,4 +16,6 @@ qmlrss http://feeds.bbci.co.uk/news/rss.xml
 Blockers:
 
  * Need an interface for Broadcom VCHIQ.
+   - https://bugs.launchpad.net/snappy/+bug/1533265
  * Need a way to specify PPA dependencies in the snapcraft.yaml.
+   - https://bugs.launchpad.net/snapcraft/+bug/1612809
