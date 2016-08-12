@@ -1,0 +1,36 @@
+name: qmlrss
+version: 0
+summary: RSS slideshow for Raspberry Pi
+description: Displays images from an RSS feed.
+confinement: devmode
+
+
+apps:
+  qmlrss:
+    command: desktop-launch qmlrss -platform eglfs
+    plugs:
+      - network
+
+parts:
+  qmlrss:
+    plugin: qmake
+    qt-version: qt5
+    source: git://github.com/ali1234/qmlrss
+    build-packages:
+      - qtbase5-dev
+      - libraspberrypi-dev
+    stage-packages:
+      # Here for the plugins-- they're not linked in automatically.
+      - libqt5declarative5
+      - qml-module-qtquick2
+      - qml-module-qtquick-xmllistmodel
+    after: [qt5]
+  qt5:
+    source: git://github.com/ubuntu/snapcraft-desktop-helpers
+    source-subdir: qt
+    make-parameters: ["FLAVOR=qt5"]
+    plugin: make
+    build-packages:
+      - qtbase5-dev
+      - dpkg-dev
+
