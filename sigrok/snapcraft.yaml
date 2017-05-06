@@ -18,13 +18,16 @@ description: |
   multimeter, and other hardware, as well as running protocol decoders over
   the sample data (either from hardware or loaded from files).
 
-confinement: devmode
+confinement: strict
+
 
 apps:
   sigrok-cli:
     command: data-dir-wrapper sigrok-cli
+    plugs: [raw-usb, network]
   pulseview:
     command: desktop-launch data-dir-wrapper pulseview
+    plugs: [raw-usb, network, x11]
 
 parts:
 
